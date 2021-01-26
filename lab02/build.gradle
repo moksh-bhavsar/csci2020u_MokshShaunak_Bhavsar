@@ -8,11 +8,11 @@ repositories{
 }
 
 dependencies {
-	testImplementation('org.junit.jupiter:junit-jupiter:5.6.0')
+	implementation('org.apache.commons:commons-csv:1.8')
 }
 
 application {
-    mainClassName = 'csci2020u.lab02.SimpleTest'
+    mainClassName = 'csci2020u.lab02.CSVDemo'
 }
 
 test {
