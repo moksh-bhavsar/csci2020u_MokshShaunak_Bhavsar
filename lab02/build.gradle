@@ -14,10 +14,3 @@ dependencies {
 application {
     mainClassName = 'csci2020u.lab02.CSVDemo'
 }
-
-test {
-	useJUnitPlatform()
-	testLogging {
-		events "passed", "skipped", "failed"
-	}
-}
