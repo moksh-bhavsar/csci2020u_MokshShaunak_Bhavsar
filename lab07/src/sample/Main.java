@@ -31,6 +31,7 @@ public class Main extends Application {
 
         GraphicsContext gc = pie.getGraphicsContext2D();
 
+        // calculate total weather warnings
         int total = 0;
         Map<String, Integer> data = dataCollector.getData();
         for (String type:data.keySet()){
@@ -40,14 +41,23 @@ public class Main extends Application {
         int cur_arc = total;
         int i = 0;
         for (String type : data.keySet()){
+            // drawing text as legend
             gc.setFill(Color.BLACK);
             gc.fillText(type, 110, 65+i*50);
+
+            // cahnging color
             gc.setFill(pieColours[i]);
+
+            //creating rectangle with appropriate color for legend
             gc.fillRect(75,50+i*50,25,25);
+
+            // creating arc of appropriate angle with appropriate color
             gc.fillArc(275,100,175,175,0,cur_arc*360/total, ArcType.ROUND);
 
             cur_arc -= data.get(type);
             i++;
+
+            // if all the colours in pieColours are used
             if (i == pieColours.length-1){
                 break;
             }
