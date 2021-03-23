@@ -10,11 +10,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
+import javafx.stage.*;
 
 import java.io.*;
-import java.security.spec.ECField;
+
 
 public class Main extends Application {
 
@@ -208,11 +207,11 @@ public class Main extends Application {
     }
 
     private void load() throws IOException {
-     String csvFile = currentFileName;
+        String csvFile = currentFileName;
 
         BufferedReader input = new BufferedReader(new FileReader(csvFile));
 
-        String line = null;
+        String line;
         while((line = input.readLine()) != null){
             String[] data = line.split(",");
             StudentRecord newRecord = new StudentRecord(data[0],Float.parseFloat(data[1]),
