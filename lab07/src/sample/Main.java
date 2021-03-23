@@ -45,7 +45,7 @@ public class Main extends Application {
             gc.setFill(Color.BLACK);
             gc.fillText(type, 110, 65+i*50);
 
-            // cahnging color
+            // changing color
             gc.setFill(pieColours[i]);
 
             //creating rectangle with appropriate color for legend
